@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Inscription Minter</title>
+<link rel="stylesheet" href="styles.css">
+<link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;700&display=swap" rel="stylesheet">
+<link rel="icon" type="image/png" href="./images/ACIIEarth.gif">
+<style>
+        #fileInput {
+            display: none; /* Hide the actual file input */
+        }
+
+        label[for="fileInput"] {
+            padding: 15px 30px;
+            color: rgb(0, 245, 0);
+            background-color: #002101;
+            border: none;
+            border-radius: 12px;
+            box-shadow: 0 0 10px rgba(0, 255, 4, 0.5);
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.1s;
+            font-family: 'Inconsolata', monospace;
+            display: inline-block; /* Make it look like a button */
+        }
+
+        #ascii { white-space: pre; font-family: monospace; font-size: .4em}
+        //the lettering styles in the ascii art
+</style>
+</head>
+<body>
+
+<div class="header">
+    <div class="wallet-network-container">
+        <button id="connectWallet">Connect Wallet</button>
+    </div>
+    <div class="network-dropdown">
+        <button id="currentNetwork" class="dropdown-button">Network: <span id="networkName">Select Network</span></button>
+        <div id="networkList" class="dropdown-content">
+            <a href="#" data-network="1">Mainnet</a>
+            <a href="#" data-network="5">Goerli</a>
+            <a href="#" data-network="11155111">Sepolia</a>
+        </div>
+    </div>
+</div>
+
+<main class="main-content">
+    <h1><Inscribe></h1>
+    <input type="text" id="inscriptionInput" placeholder="The World is Yours..."/>
+    <button id="mintButton">Mint Inscription</button>
+    <div class="center-container">
+        <input type="file" id="fileInput">
+        <label for="fileInput" class="custom-file-upload">Choose File</label>
+        <canvas id="canvas" style="display:none;"></canvas>
+        <div class="ascii-card">
+            <pre id="ascii"></pre>
+        </div>
+        <button id="copyButton" class="copy-button">Copy ASCII</button>
+    </div>
+    <div class="card">
+        <div id="inscriptionCount">Inscriptions Minted: <span>0</span></div>
+        <p>Note: Inscriptions are permanent on the blockchain</p>
+    </div>
+    
+</main>
+
+<script src="script.js"></script>
+<script src="web3.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/web3/dist/web3.min.js"></script>
+<script src="image-to-ascii.js"></script> <!-- Include the converter's JS file -->
+
+</body>
+</html>
