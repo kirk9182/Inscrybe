@@ -1,0 +1,217 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Inconsolata', monospace; /* Changed to Inconsolata */
+    background-image: url('./images/ACIIEarth.gif');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 800px; /* or 'cover' depending on your need */
+    background-position: center;
+    background-color: #000000;
+    color: rgb(0, 255, 0);
+}
+.header {
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+    padding: 15px;
+    border-bottom-left-radius: 6px;
+    border-bottom-right-radius: 6px;
+    background-color: #000000;
+    box-shadow: 0 0 10px rgba(0, 230, 4, 0.52);
+
+    position: fixed; /* Fix the header at the top */
+    top: 0; /* Align the header at the top of the page */
+    left: 0; /* Align the header to the left of the page */
+    right: 0; /* Ensure the header stretches across the full width */
+    z-index: 1000; /* Ensure the header stays on top of other elements */
+}
+
+
+button {
+    padding: 15px 30px;
+    color: rgb(0, 245, 0);
+    background-color: #002101;
+    border: none;
+    border-radius: 12px; /* Rounded borders for bubbly buttons */
+    box-shadow: 0 0 10px rgba(0, 255, 4, 0.5); /* Glow effect on focus */
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.1s;
+    font-family: 'Inconsolata', monospace; /* Apply Inconsolata to buttons */
+}
+
+button:hover {
+    background-color: #004b06;
+    transform: scale(1.05); /* Button grows slightly on hover */
+}
+
+button:active {
+    transform: scale(0.95); /* Button shrinks slightly when clicked */
+}
+
+.main-content {
+    text-align: center;
+    padding-top: 265px;
+}
+.card {
+    position: fixed; /* Changed from center to fixed */
+    bottom: 0;      /* Aligns to the bottom of the page */
+    left: 0;        /* Aligns to the left of the page */
+    width: 100%;    /* Ensures it spans the full width */
+    background-color: rgba(0, 0, 0, 0.75); /* Semi-transparent black */
+    color: rgb(0, 255, 0);
+    padding: 15px;
+    box-shadow: 0 -5px 10px rgba(0, 255, 4, 0.5);
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    text-align: center;
+    z-index: 1;
+}
+
+
+.card p {
+    margin: 10px 0 0; /* Add some space above the paragraph */
+}
+
+
+#inscriptionInput {
+    width: 50%;
+    padding: 15px 30px;
+    margin-bottom: 10px;
+    color: white;
+    background-color: #000000;
+    border: none;
+    border-radius: 22px; /* Rounded borders for bubbly buttons */
+    box-shadow: 0 0 10px rgba(0, 255, 4, 0.5); /* Glow effect on focus */
+    font-family: 'Inconsolata', monospace; /* Apply Inconsolata to input box */
+}
+
+#inscriptionInput:focus {
+    outline: none;
+    box-shadow: 0 0 10px rgba(0, 255, 4, 0.7); /* Glow effect on focus */
+    color: rgb(0, 245, 0);
+}
+.green-bold-link {
+  color: rgb(0, 255, 4);
+  font-weight: bold;
+}
+#inscriptionInput.limit-exceeded {
+  box-shadow: 0 0 10px rgba(255, 0, 0, 0.8); /* Red glow effect */
+  animation: shake 0.5s; /* Shake animation for emphasis */
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  25%, 75% { transform: translateX(-5px); }
+  50% { transform: translateX(5px); }
+}
+/* ... existing styles ... */
+
+/* Dropdown Button - make it look different from other buttons if needed */
+.dropdown-button {
+  padding: 15px 20px; /* Slightly less padding */
+  background-color: #000; /* Black to match the header */
+  border: 1px solid rgba(0, 255, 4, 0.7); /* Green border */
+  margin-right: 10px; /* Spacing from the right edge */
+  font-family: 'Inconsolata', monospace;
+  color: #00ff00; /* Bright green text */
+  text-align: left;
+}
+
+/* Dropdown Content */
+.network-dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  right: 0;
+  background-color: #000; /* Dark background */
+  min-width: 160px;
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: rgb(0, 255, 0); /* Green text */
+  padding: 12px 16px;
+  text-align: left; /* Align text to the left */
+  text-decoration: none;
+  display: block;
+  font-family: 'Inconsolata', monospace;
+}
+
+.dropdown-content a:hover {
+  background-color: #002101; /* Dark green background on hover */
+}
+
+/* Show the dropdown menu on hover */
+.network-dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* ... existing styles ... */
+
+/* Card for ASCII output */
+.ascii-card {
+    position: relative;
+    background-color: #000000; /* Code card background */
+    color: rgb(0, 245, 0); /* Code card text color */
+    border-radius: 10px;
+    padding: 20px;
+    margin: 20px;
+    max-width: 80%;
+    max-height: 500px;
+    overflow: auto;
+    font-family: 'Inconsolata', monospace;
+    box-shadow: 0 0 10px rgba(0, 255, 4, 0.5); /* Glow effect */
+    border: 1px solid rgba(0, 255, 4, 0.5); /* Optional: Adds a slight border */
+    letter-spacing: 2px; /* Adjust as necessary */
+    word-spacing: 2px; /* Adjust as necessary */
+    font-size: 14px; /* Adjust as necessary */
+    line-height: 1.2; /* Adjust as necessary */
+    white-space: pre; /* This ensures whitespace is maintained */
+}
+
+
+/* Copy Button */
+.copy-button {
+    margin-bottom: 200px;
+    padding: 15px 30px;
+    color: rgb(0, 245, 0);
+    background-color: #002101;
+    border: none;
+    border-radius: 12px; /* Rounded borders for bubbly buttons */
+    box-shadow: 0 0 10px rgba(0, 255, 4, 0.5); /* Glow effect on focus */
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.1s;
+    font-family: 'Inconsolata', monospace; /* Apply Inconsolata to buttons */
+}
+
+.copy-button:hover {
+    background-color: #004b06;
+    transform: scale(1.05); /* Button grows slightly on hover */
+}
+
+.custom-file-upload {
+    margin-top: 335px;
+    display: inline-block;
+    padding: 15px 30px;
+    color: rgb(0, 245, 0);
+    background-color: #002101;
+    border: none;
+    border-radius: 12px;
+    box-shadow: 0 0 10px rgba(0, 255, 4, 0.5);
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.1s;
+    font-family: 'Inconsolata', monospace;
+}
+.center-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    min-height: 100vh; /* This makes sure that the content is centered vertically as well */
+}
